@@ -25,7 +25,28 @@ function sendTextMessage(sender, text) {
 					            "title": text,
 					            "buttons":[
 					              {
-					                "type":"element_share"
+					                "type":"element_share",
+					                "share_contents": { 
+												          "attachment": {
+												            "type": "template",
+												            "payload": {
+												              "template_type": "generic",
+												              "elements": [
+												                {
+												                  "title": "I took Peter's 'Which Hat Are You?' Quiz",
+												                  "subtitle": "My result: Fez",
+												                  "buttons": [
+												                    {
+												                      "type": "web_url",
+												                      "url": "https://github.com/savagprash", 
+												                      "title": "Take Quiz"
+												                    }
+												                  ]
+												                }
+												              ]
+												            }
+												          }
+												        }
 					              }              
 					            ]
 					          },
