@@ -15,7 +15,25 @@ app.use(bodyParser.json());
 var token = process.env.FB_PAGE_ACCESS_TOKEN;
 
 function sendTextMessage(sender, text) {
-	var messageData = { text:text };
+	var messageData = {
+					    "attachment":{
+					      "type":"template",
+					      "payload":{
+					        "template_type":"generic",
+					        "elements":[
+					          {
+					            "title": text,
+					            "buttons":[
+					              {
+					                "type":"element_share"
+					              }              
+					            ]
+					          }
+					        ]
+					      }
+					    }
+					  }
+					};
 	
 	request({
 		url: 'https://graph.facebook.com/v2.6/me/messages',
