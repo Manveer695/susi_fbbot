@@ -28,6 +28,14 @@ function sendTextMessage(sender, text) {
 					                "type":"element_share"
 					              }              
 					            ]
+					          },
+					          {
+					            "title": 'hi',
+					            "buttons":[
+					              {
+					                "type":"element_share"
+					              }              
+					            ]
 					          }
 					        ]
 					      }
