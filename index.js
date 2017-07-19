@@ -21,13 +21,15 @@ function sendTextMessage(sender, text) {
 					      "payload":{
 					        "template_type":"generic",
 					        "elements":[
-					          {
+					        {
 					            "title": text,
 					            "buttons":[
 					              {
-					                "type":"element_share"            
-					            ]
+					                "type":"element_share" 
+					              }
+					            ]           
 					          }
+					        ]
 					      }
 					    }
 					  };
