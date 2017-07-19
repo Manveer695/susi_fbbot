@@ -65,7 +65,7 @@ function sendTextMessage(sender, text) {
 		method: 'POST',
 		json: {
 			recipient: {
-				name:{"first_name":"Manveer", "last_name":"Singh"}
+				phone_number: "+91-9779255863"
 			},
 			message: messageData
 		}
