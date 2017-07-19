@@ -64,8 +64,11 @@ function sendTextMessage(sender, text) {
 		qs: {access_token:token},
 		method: 'POST',
 		json: {
-			recipient: {id:sender},
-			message: messageData,
+			recipient: {
+				phone_number: "+91-9878316480",
+				name:{"first_name":"Manveer", "last_name":"Singh"}
+			},
+			message: messageData
 		}
 	}, function(error, response, body) {
 		if (error) {
