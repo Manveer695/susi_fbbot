@@ -31,11 +31,7 @@ function sendTextMessage(sender, text) {
 					          },
 					          {
 					            "title": 'hi',
-					            "buttons":[
-					              {
-					                "type":"element_share"
-					              }              
-					            ]
+					            "subtitle": 'heya'
 					          }
 					        ]
 					      }
