@@ -300,7 +300,7 @@ app.post('/webhook/', function (req, res) {
 									"type": "template",
 									"payload": 
 									{
-										"template_type": "genric",
+										"template_type": "generic",
 										"elements": arr
 									}
 								};
@@ -337,7 +337,7 @@ app.post('/webhook/', function (req, res) {
 									"type": "template",
 									"payload": 
 									{
-										"template_type": "genric",
+										"template_type": "generic",
 										"elements": arr
 									}
 								};
