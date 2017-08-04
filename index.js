@@ -271,7 +271,7 @@ app.post('/webhook/', function (req, res) {
 			}
 
 			// Construct the query for susi
-			var queryUrl = 'http://api.asksusi.com/susi/chat.json?q='+encodeURI(text);
+			var queryUrl = 'http://api.susi.ai/susi/chat.json?q='+encodeURI(text);
 			var message = '';
 			// Wait until done and reply
 			request({
@@ -400,7 +400,7 @@ app.post('/webhook/', function (req, res) {
         	}
         	else if(event.postback.payload === 'latest_news'){
         		// Construct the query for susi
-				var queryUrl = 'http://api.asksusi.com/susi/chat.json?q=news';
+				var queryUrl = 'http://api.susi.ai/susi/chat.json?q=news';
 				var message = '';
 				// Wait until done and reply
 				request({
