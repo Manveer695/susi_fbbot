@@ -279,6 +279,7 @@ app.post('/webhook/', function (req, res) {
 				json: true
 			}, function (error, response, body) {
 				if (!error && response.statusCode === 200) {
+					console.log('I am in');
 					if(body.answers[0])
 					{
 						if(body.answers[0].actions[1]){
@@ -357,8 +358,7 @@ app.post('/webhook/', function (req, res) {
 					            						}
 					            		]
 									}
-								};
-								
+								};			
 								sendTextMessage(sender, message, 1);
 							}
 						}
