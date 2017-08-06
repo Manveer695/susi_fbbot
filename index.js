@@ -260,6 +260,7 @@ function requestReply(sender, text){
 															          "title":"Acronym of NASA.",
 												                      "payload":"latest_news"
 															        }
+															    ]
 			            						}
 			            		]
 							}
