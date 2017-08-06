@@ -257,7 +257,7 @@ function requestReply(sender, text){
 			            							"buttons": [
 															        {
 															          "type":"postback",
-															          "title":"Acronym of NASA.",
+															          "title":"Borders with INDIA",
 												                      "payload":"latest_news"
 															        }
 															    ]
