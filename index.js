@@ -196,6 +196,83 @@ function typingIndicator(sender, flag){
 
 function requestReply(sender, text){
 	// Construct the query for susi
+
+	if(text === "Contribution"){
+		var message = 'You can visit the SUSI.AI repository and start contributing.';
+		// Wait until done and reply
+		
+				var messageT = {
+							"type": "template",
+							"payload": 
+							{
+								"template_type": "generic",
+								"elements": [
+												{
+			            							"title": message,
+			            							"buttons": [
+											                    {
+											                      "type": "web_url",
+											                      "url": "https://github.com/fossasia/susi_server", 
+											                      "title": "Visit SUSI.AI repository"
+											                    }
+											                  ]
+			            						}
+			            		]
+							}
+						};
+					sendTextMessage(sender, messageT, 1);
+		var message = 'You can also join us on our journey to improve SUSI.AI (through discussions) via Gitter.';
+		// Wait until done and reply
+		
+				var messageT = {
+							"type": "template",
+							"payload": 
+							{
+								"template_type": "generic",
+								"elements": [
+												{
+			            							"title": message,
+			            							"buttons": [
+											                    {
+											                      "type": "web_url",
+											                      "url": "https://gitter.im/fossasia/susi_server", 
+											                      "title": "Chat on Gitter"
+											                    }
+											                  ]
+			            						}
+			            		]
+							}
+						};
+					sendTextMessage(sender, messageT, 1);
+	}
+	else if(text === "try"){
+		var messageT = {
+							"type": "template",
+							"payload": 
+							{
+								"template_type": "generic",
+								"elements": [
+												{
+			            							"title": 'You can try the following:',
+			            							"buttons": [
+															        {
+															          "type":"postback",
+															          "title":"Acronym of NASA.",
+												                      "payload":"latest_news"
+															        },
+											                  		{
+															          "type":"postback",
+															          "title":"Rating of Game of Thrones.",
+												                      "payload":"latest_news1"
+															        }
+											                  ]
+			            						}
+			            		]
+							}
+						};
+					sendTextMessage(sender, messageT, 1);
+	}
+	else{
 	var queryUrl = 'http://api.asksusi.com/susi/chat.json?q='+encodeURI(text);
 	var message = '';
 	// Wait until done and reply
@@ -290,6 +367,7 @@ function requestReply(sender, text){
 			sendTextMessage(sender, message,0);
 		}
 	});
+	}
 }
 
 function persistentMenuGenerator(){
