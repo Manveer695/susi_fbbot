@@ -259,13 +259,7 @@ function requestReply(sender, text){
 															          "type":"postback",
 															          "title":"Acronym of NASA.",
 												                      "payload":"latest_news"
-															        },
-											                  		{
-															          "type":"postback",
-															          "title":"Rating of Game of Thrones.",
-												                      "payload":"latest_news1"
 															        }
-											                  ]
 			            						}
 			            		]
 							}
