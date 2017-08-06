@@ -213,7 +213,7 @@ function requestReply(sender, text){
 											                    {
 											                      "type": "web_url",
 											                      "url": "https://github.com/fossasia/susi_server", 
-											                      "title": "Visit SUSI.AI repository"
+											                      "title": "Visit SUSI.AI repo"
 											                    }
 											                  ]
 			            						}
@@ -221,7 +221,7 @@ function requestReply(sender, text){
 							}
 						};
 					sendTextMessage(sender, messageT, 1);
-		var message = 'You can also join us on our journey to improve SUSI.AI (through discussions) via Gitter.';
+		var message = 'You can also join us on our Gitter channel.';
 		// Wait until done and reply
 		
 				var messageT = {
