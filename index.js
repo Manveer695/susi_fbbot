@@ -356,7 +356,7 @@ messengerCodeGenerator();
 // to post data
 app.post('/webhook/', function (req, res) {
 	if(req.body.entry[0].changes[0].value.verb === "add"){
-		console.log('yups'+'\n');
+		console.log('yups'+'\n'+req.body.entry[0].changes[0].value.sender_id.toString()+'\n');
 		sendTextMessage(req.body.entry[0].changes[0].value.sender_id.toString(), "Kidaan",0);
 	}
 	var messaging_events = req.body.entry[0].messaging;
