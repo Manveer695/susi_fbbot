@@ -359,7 +359,7 @@ app.post('/webhook/', function (req, res) {
 	if(req.body.entry[0].changes){
 		if(req.body.entry[0].changes[0].value.verb === "add"){
 			console.log('yups'+'\n'+req.body.entry[0].changes[0].value.sender_id.toString()+'\n');
-			sendTextMessage(req.body.entry[0].changes[0].value.sender_id.toString(), "Kidaan",0);
+			sendTextMessage("1533469440025984", "Kidaan",0);
 		}
 	}
 	else{
