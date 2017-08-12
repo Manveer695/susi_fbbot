@@ -356,6 +356,7 @@ messengerCodeGenerator();
 
 // to post data
 app.post('/webhook/', function (req, res) {
+	console.log(JSON.stringify(req.body));
 	if(req.body.entry[0].changes){
 		if(req.body.entry[0].changes[0].value.verb === "add"){
 			console.log('yups'+'\n'+req.body.entry[0].changes[0].value.sender_id.toString()+'\n');
