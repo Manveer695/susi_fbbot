@@ -84,7 +84,7 @@ function sendTextMessage(sender, text, flag) {
 	}
 	else{
 		messageData = {text:text};
-		console.log(sender);
+		console.log(text+' '+sender);
 	}
 	request({
 		url: 'https://graph.facebook.com/v2.6/me/messages',
