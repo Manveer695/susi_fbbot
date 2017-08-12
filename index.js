@@ -356,6 +356,7 @@ messengerCodeGenerator();
 // to post data
 app.post('/webhook/', function (req, res) {
 	var messaging_events = req.body.entry[0].messaging;
+	console.log(JSON.stringify(messaging_events)+'\n');
 	typingIndicator(req.body.entry[0].messaging[0].sender.id,1);
 	for (var i = 0; i < messaging_events.length; i++) {
 		var event = req.body.entry[0].messaging[i];
@@ -413,7 +414,7 @@ app.post('/webhook/', function (req, res) {
 														          "title":"Borders with INDIA",
 											                      "payload":"Borders with INDIA"
 														        }
-														    ]
+												]
 		            						}
 		            		]
 						}
