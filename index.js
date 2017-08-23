@@ -492,28 +492,14 @@ app.post('/webhook/', function (req, res) {
 			              "payload":{
 			                "template_type":"generic",
 			                "elements":[
-			                   {
-			                    "title":welMessage,
-			                    "subtitle":introMessage,
-			                    "buttons":[
-			                      {
-			                        "type":"web_url",
-			                        "url":"https://github.com/fossasia/susi_server",
-			                        "title":"View Repository"
-			                      },{
-			                        "type":"postback",
-			                        "title":"Start Chatting",
-			                        "payload":"start_chatting"
-			                      },{
-			                        "type":"postback",
-			                        "title":"How to contribute?",
-			                        "payload":"start_contributing"
-			                      }                 
-			                    ]      
-			                  }
+			                   "element": {
+			                        "title": "Your current location",
+			                        "image_url": "https:\/\/maps.googleapis.com\/maps\/api\/staticmap?size=764x400&center="+lat+","+long+"&zoom=25&markers="+lat+","+long,
+			                        "item_url": "http:\/\/maps.apple.com\/maps?q="+lat+","+long+"&z=16"
+			                    }
 			                ]
 			              }
-			            }
+			            };
 			          	sendTextMessage(sender, messageData, 1);
 			        });
 				});
