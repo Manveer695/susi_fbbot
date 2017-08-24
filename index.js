@@ -14,6 +14,8 @@ app.use(bodyParser.json());
 // recommended to inject access tokens as environmental variables, e.g.
 var token = process.env.FB_PAGE_ACCESS_TOKEN;
 
+var chk; 
+
 var buttons;
 var queryUrl = 'http://api.susi.ai/susi/chat.json?q='+'Share';
 var message = '';
@@ -49,7 +51,6 @@ request({
 				        }
 		              } 
 		          ];
-
 	}
 	else{
 		message = 'Oops, Looks like Susi is taking a break, She will be back soon';
@@ -95,17 +96,17 @@ function sendTextMessage(sender, text, flag) {
 		}
 	}, function(error, response, body) {
 		if (error) {
-			var a = JSON.stringify({
+			chk = {
 				recipient: {id:sender},
 				message: messageData,
-			});
-			console.log(a+'\nError sending messages: ', error);
+			};
+			console.log('Error sending messages: ', error);
 		} else if (response.body.error) {
-			var a = JSON.stringify({
+			chk = {
 				recipient: {id:sender},
 				message: messageData,
-			});
-			console.log(a+'\nError: ', response.body.error);
+			};
+			console.log('Error: ', response.body.error);
 		}
 		typingIndicator(sender,0);
 	});
@@ -349,6 +350,7 @@ deletePersistentMenu();
 persistentMenuGenerator();
 
 app.get('/', function (req, res) {
+	console.log(chk);
 	res.send('Susi says Hello.');
 });
 
