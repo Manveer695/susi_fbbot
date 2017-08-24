@@ -95,16 +95,16 @@ function sendTextMessage(sender, text, flag) {
 		}
 	}, function(error, response, body) {
 		if (error) {
-			var a = {
+			var a = JSON.stringify({
 				recipient: {id:sender},
 				message: messageData,
-			};
+			});
 			console.log(a+'\nError sending messages: ', error);
 		} else if (response.body.error) {
-			var a = {
+			var a = JSON.stringify({
 				recipient: {id:sender},
 				message: messageData,
-			};
+			});
 			console.log(a+'\nError: ', response.body.error);
 		}
 		typingIndicator(sender,0);
