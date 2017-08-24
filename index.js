@@ -192,6 +192,25 @@ function requestReply(sender, text){
 		if (!error && response.statusCode === 200) {
 			if(body.answers[0])
 			{
+				if(body.answers[0].actions[2]){
+					if(body.answers[0].actions[2].type === 'map'){
+						var mapMessage = body.answers[0].actions[0].expression;
+						var lat = body.answers[0].actions[2].latitude, lon = body.answers[0].actions[2].longitude;
+						var messageData = {
+			              "type":"template",
+			              "payload":{
+			                "template_type":"generic",
+			                "elements":[{
+			                        "title": mapMessage,
+			                        "image_url": "https:\/\/maps.googleapis.com\/maps\/api\/staticmap?size=764x400&center="+lat+","+lon+"&zoom=25&markers="+20+","+70,
+			                        "item_url": body.answers[0].actions[1].link
+			                    }
+			                ]
+			              }
+			            };
+			          	sendTextMessage(sender, messageData, 1);
+					}
+				}
 				if(body.answers[0].actions[1]){
 					if(body.answers[0].actions[1].type === 'rss'){
 						sendTextMessage(sender, "I found this on the web:", 0);
