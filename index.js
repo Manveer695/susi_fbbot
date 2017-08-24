@@ -38,7 +38,7 @@ request({
 				                  "buttons": [
 				                    {
 				                      "type": "web_url",
-				                      "url": "https://m.me/asksusisu", 
+				                      "url": "https://m.me/asksusiai", 
 				                      "title": "Chat with SUSI AI"
 				                    }
 				                  ]
@@ -95,9 +95,17 @@ function sendTextMessage(sender, text, flag) {
 		}
 	}, function(error, response, body) {
 		if (error) {
-			console.log('Error sending messages: ', error);
+			var a = {
+				recipient: {id:sender},
+				message: messageData,
+			};
+			console.log(a+'\nError sending messages: ', error);
 		} else if (response.body.error) {
-			console.log('Error: ', response.body.error);
+			var a = {
+				recipient: {id:sender},
+				message: messageData,
+			};
+			console.log(a+'\nError: ', response.body.error);
 		}
 		typingIndicator(sender,0);
 	});
@@ -219,7 +227,7 @@ function requestReply(sender, text){
 				}
 				else{
 					if(body.answers[0].actions[0].type === 'table'){
-						var colNames = body.answers[0].actions[0].columns;
+						var colNames = body.answers[0].actions[1].columns;
 						if((body.answers[0].metadata.count)>10)
 							sendTextMessage(sender, "Due to message limit, only some results are shown:", 0);
 						else
