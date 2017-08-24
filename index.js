@@ -206,6 +206,7 @@ function requestReply(sender, text){
 								}
 							);
 						}
+						console.log(arr);
 						message = {
 							"type": "template",
 							"payload": 
