@@ -493,8 +493,8 @@ app.post('/webhook/', function (req, res) {
 			                "template_type":"generic",
 			                "elements":[{
 			                        "title": "Your current location",
-			                        "image_url": "https:\/\/maps.googleapis.com\/maps\/api\/staticmap?size=764x400&center="+lat+","+long+"&zoom=25&markers="+lat+","+long,
-			                        "item_url": "http:\/\/maps.apple.com\/maps?q="+lat+","+long+"&z=16"
+			                        "image_url": "https:\/\/maps.googleapis.com\/maps\/api\/staticmap?size=764x400&center="+20+","+70+"&zoom=25&markers="+20+","+70,
+			                        "item_url": "http:\/\/maps.apple.com\/maps?q="+20+","+70+"&z=16"
 			                    }
 			                ]
 			              }
