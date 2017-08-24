@@ -225,9 +225,7 @@ function requestReply(sender, text){
 							}
 						};
 					}
-				}
-				else{
-					if(body.answers[0].actions[1].type === 'table'){
+					else if(body.answers[0].actions[1].type === 'table'){
 						var colNames = body.answers[0].actions[1].columns;
 						if((body.answers[0].metadata.count)>10)
 							sendTextMessage(sender, "Due to message limit, only some results are shown:", 0);
@@ -262,28 +260,29 @@ function requestReply(sender, text){
 							}
 						};
 					}
-					else
-					{
-						var messageTitle = body.answers[0].actions[0].expression;
-						message = {
-							"type": "template",
-							"payload": 
-							{
-								"template_type": "generic",
-								"elements": [
-												{
-			            							"title": messageTitle,
-			            							"buttons": buttons
-			            						}
-			            		]
-							}
-						};
-					}
 				}
-				console.log(message);
-				sendTextMessage(sender, message, 1);
+				else
+				{
+					var messageTitle = body.answers[0].actions[0].expression;
+					message = {
+						"type": "template",
+						"payload": 
+						{
+							"template_type": "generic",
+							"elements": [
+											{
+		            							"title": messageTitle,
+		            							"buttons": buttons
+		            						}
+		            		]
+						}
+					};
+				}
 			}
-		} else {
+			console.log(message);
+			sendTextMessage(sender, message, 1);
+		}
+		else {
 			message = 'Oops, Looks like Susi is taking a break, She will be back soon';
 			sendTextMessage(sender, message,0);
 		}
