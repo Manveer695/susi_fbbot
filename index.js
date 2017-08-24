@@ -227,7 +227,7 @@ function requestReply(sender, text){
 					}
 				}
 				else{
-					if(body.answers[0].actions[0].type === 'table'){
+					if(body.answers[0].actions[1].type === 'table'){
 						var colNames = body.answers[0].actions[1].columns;
 						if((body.answers[0].metadata.count)>10)
 							sendTextMessage(sender, "Due to message limit, only some results are shown:", 0);
