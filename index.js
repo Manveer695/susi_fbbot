@@ -350,8 +350,7 @@ deletePersistentMenu();
 persistentMenuGenerator();
 
 app.get('/', function (req, res) {
-	console.log(chk);
-	res.send('Susi says Hello.');
+	res.send(JSON.stringify(chk)+'\nSusi says Hello.');
 });
 
 // for facebook verification
