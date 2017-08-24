@@ -252,6 +252,7 @@ function requestReply(sender, text){
 								}
 							);
 						}
+						console.log("------------"+arr);
 						message = {
 							"type": "template",
 							"payload": 
@@ -350,7 +351,7 @@ deletePersistentMenu();
 persistentMenuGenerator();
 
 app.get('/', function (req, res) {
-	res.send(JSON.stringify(chk)+'\nSusi says Hello.');
+	res.send('Susi says Hello.');
 });
 
 // for facebook verification
