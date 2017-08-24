@@ -270,6 +270,7 @@ function requestReply(sender, text){
 						};
 					}
 				}
+				console.log(message);
 				sendTextMessage(sender, message, 1);
 			}
 		} else {
